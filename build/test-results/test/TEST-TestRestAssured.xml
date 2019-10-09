@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="TestRestAssured" tests="1" skipped="0" failures="0" errors="0" timestamp="2019-10-09T16:58:12" hostname="LAPTOP-F7IKGFDI" time="7.841">
-  <properties/>
-  <testcase name="myFirstRestAssuredTest" classname="TestRestAssured" time="7.841"/>
-  <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>
