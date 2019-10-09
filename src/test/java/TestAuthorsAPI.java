@@ -7,13 +7,19 @@ import static io.restassured.matcher.RestAssuredMatchers.*;
 import static org.hamcrest.Matchers.*;
 
 public class TestAuthorsAPI {
+//    Set the base URI before each test is run
     @Before
     public void setUp(){
         RestAssured.baseURI = "https://fakerestapi.azurewebsites.net";
     }
 
+    /**
+     * Test the Authors Post endpoint with a valid payload
+     * The body should be a non-empty JSON object
+     * The status code should be Success
+     */
     @Test
-    public void testPostSuccess()
+    public void testAuthorsPostSuccess()
     {
          String payload = "{\n" +
              "  \"ID\": 987,\n" +
@@ -34,8 +40,12 @@ public class TestAuthorsAPI {
             statusCode(200);
     }
 
+    /**
+     * Test the Authors GET by Author ID endpoint
+     * Each attribute in the response body should be equal to the expected value
+     */
     @Test
-    public void testGetAuthorsBody()
+    public void testAuthorsGetBody()
     {
 //        Integer id = 1;
         given().
@@ -48,5 +58,15 @@ public class TestAuthorsAPI {
                 "IDBook", equalTo(1),
                 "FirstName", equalTo("First Name 1"),
                 "LastName", equalTo("Last Name 1"));
+    }
+
+    /**
+     * Test the Authors GET by Book ID endpoint
+     * The response body should contain each Author with the associated Book ID
+     */
+    @Test
+    public void testAuthorsGetIDBook()
+    {
+
     }
 }

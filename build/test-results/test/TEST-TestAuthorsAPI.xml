@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="TestAuthorsAPI" tests="2" skipped="0" failures="0" errors="0" timestamp="2019-10-09T20:12:25" hostname="LAPTOP-F7IKGFDI" time="4.9">
+  <properties/>
+  <testcase name="testPostSuccess" classname="TestAuthorsAPI" time="3.352"/>
+  <testcase name="testGetAuthorsBody" classname="TestAuthorsAPI" time="1.548"/>
+  <system-out><![CDATA[Body:
+{
+    "ID": 987,
+    "IDBook": 789,
+    "FirstName": "Jas",
+    "LastName": "Fai"
+}
+{
+    "ID": 987,
+    "IDBook": 789,
+    "FirstName": "Jas",
+    "LastName": "Fai"
+}
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
