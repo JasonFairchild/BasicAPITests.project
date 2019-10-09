@@ -1,13 +1,21 @@
-Body:
-{
-    "ID": 987,
-    "IDBook": 789,
-    "FirstName": "Jas",
-    "LastName": "Fai"
-}
-{
-    "ID": 987,
-    "IDBook": 789,
-    "FirstName": "Jas",
-    "LastName": "Fai"
-}
+[
+    {
+        "ID": 4,
+        "IDBook": 2,
+%        "FirstName": "First Name 4",
+"        "LastName": "Last Name 4"
+    },
+    {
+        "ID": 5,
+        "IDBook": 2,
+%        "FirstName": "First Name 5",
+"        "LastName": "Last Name 5"
+    },
+    {
+        "ID": 6,
+        "IDBook": 2,
+%        "FirstName": "First Name 6",
+"        "LastName": "Last Name 6"
+    }
+]
+Û[{"ID":4,"IDBook":2,"FirstName":"First Name 4","LastName":"Last Name 4"},{"ID":5,"IDBook":2,"FirstName":"First Name 5","LastName":"Last Name 5"},{"ID":6,"IDBook":2,"FirstName":"First Name 6","LastName":"Last Name 6"}]

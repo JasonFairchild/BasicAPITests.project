@@ -1,21 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="TestAuthorsAPI" tests="2" skipped="0" failures="0" errors="0" timestamp="2019-10-09T20:12:25" hostname="LAPTOP-F7IKGFDI" time="4.9">
+<testsuite name="TestAuthorsAPI" tests="3" skipped="0" failures="0" errors="0" timestamp="2019-10-09T22:30:52" hostname="LAPTOP-F7IKGFDI" time="5.691">
   <properties/>
-  <testcase name="testPostSuccess" classname="TestAuthorsAPI" time="3.352"/>
-  <testcase name="testGetAuthorsBody" classname="TestAuthorsAPI" time="1.548"/>
-  <system-out><![CDATA[Body:
-{
-    "ID": 987,
-    "IDBook": 789,
-    "FirstName": "Jas",
-    "LastName": "Fai"
-}
-{
-    "ID": 987,
-    "IDBook": 789,
-    "FirstName": "Jas",
-    "LastName": "Fai"
-}
+  <testcase name="testAuthorsGetBody" classname="TestAuthorsAPI" time="3.585"/>
+  <testcase name="testAuthorsPostSuccess" classname="TestAuthorsAPI" time="0.971"/>
+  <testcase name="testAuthorsGetIDBook" classname="TestAuthorsAPI" time="1.135"/>
+  <system-out><![CDATA[[
+    {
+        "ID": 4,
+        "IDBook": 2,
+        "FirstName": "First Name 4",
+        "LastName": "Last Name 4"
+    },
+    {
+        "ID": 5,
+        "IDBook": 2,
+        "FirstName": "First Name 5",
+        "LastName": "Last Name 5"
+    },
+    {
+        "ID": 6,
+        "IDBook": 2,
+        "FirstName": "First Name 6",
+        "LastName": "Last Name 6"
+    }
+]
+[{"ID":4,"IDBook":2,"FirstName":"First Name 4","LastName":"Last Name 4"},{"ID":5,"IDBook":2,"FirstName":"First Name 5","LastName":"Last Name 5"},{"ID":6,"IDBook":2,"FirstName":"First Name 6","LastName":"Last Name 6"}]
 ]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
