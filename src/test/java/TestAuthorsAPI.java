@@ -25,12 +25,28 @@ public class TestAuthorsAPI {
         given().
             contentType(ContentType.JSON).
             body(payload).
-            log().body().
+//            log().body().
         when().
             post("/api/Authors").
         then().
-            log().body().
+//            log().body().
             contentType(ContentType.JSON).
             statusCode(200);
+    }
+
+    @Test
+    public void testGetAuthorsBody()
+    {
+//        Integer id = 1;
+        given().
+            pathParam("ID", 1).
+        when().
+            get("/api/Authors/{ID}").
+        then().
+            body(
+                "ID", equalTo(1),
+                "IDBook", equalTo(1),
+                "FirstName", equalTo("First Name 1"),
+                "LastName", equalTo("Last Name 1"));
     }
 }
