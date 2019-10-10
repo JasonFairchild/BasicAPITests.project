@@ -48,4 +48,21 @@ public class TestBooksAPI {
 //            contentType(ContentType.JSON).
             statusCode(not(200));
     }
+
+    /**
+     * Test the Books Get endpoint
+     * It should return 404 when the resource ID does not exist
+     */
+    @Test
+    public void testBooksGetNotFound()
+    {
+        int bookID = 98765;
+
+        given().
+            pathParam("ID", bookID).
+        when().
+            get("/api/Books/{ID}").
+        then().
+            statusCode(404);
+    }
 }

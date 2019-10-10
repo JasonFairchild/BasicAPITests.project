@@ -58,9 +58,9 @@ public class TestAuthorsAPI {
 //        Integer id = 1;
         given().
             pathParam("ID", 1).
-            when().
+        when().
             get("/api/Authors/{ID}").
-            then().
+        then().
             body(
                 "ID", equalTo(1),
                 "IDBook", equalTo(1),
