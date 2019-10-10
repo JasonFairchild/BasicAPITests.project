@@ -1,20 +1,9 @@
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
-import io.restassured.response.Response;
 import org.junit.Before;
 import org.junit.Test;
-import org.junit.runner.RunWith;
-
-import com.tngtech.java.junit.dataprovider.DataProvider;
-import com.tngtech.java.junit.dataprovider.DataProviderRunner;
-import com.tngtech.java.junit.dataprovider.UseDataProvider;
-
-import java.util.List;
-
-import static io.restassured.RestAssured.*;
-import static io.restassured.matcher.RestAssuredMatchers.*;
-import static org.hamcrest.MatcherAssert.assertThat;
-import static org.hamcrest.Matchers.*;
+import static io.restassured.RestAssured.given;
+import static org.hamcrest.Matchers.not;
 
 public class TestBooksAPI {
     //    Set the base URI before each test is run
@@ -40,12 +29,9 @@ public class TestBooksAPI {
         given().
             contentType(ContentType.JSON).
             body(payload).
-            log().body().
         when().
             post("/api/Books/99").
         then().
-            log().body().
-//            contentType(ContentType.JSON).
             statusCode(not(200));
     }
 

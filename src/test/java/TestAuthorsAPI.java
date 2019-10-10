@@ -3,18 +3,10 @@ import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import org.junit.Before;
 import org.junit.Test;
-import org.junit.runner.RunWith;
-
-import com.tngtech.java.junit.dataprovider.DataProvider;
-import com.tngtech.java.junit.dataprovider.DataProviderRunner;
-import com.tngtech.java.junit.dataprovider.UseDataProvider;
-
 import java.util.List;
-
-import static io.restassured.RestAssured.*;
-import static io.restassured.matcher.RestAssuredMatchers.*;
+import static io.restassured.RestAssured.given;
 import static org.hamcrest.MatcherAssert.assertThat;
-import static org.hamcrest.Matchers.*;
+import static org.hamcrest.Matchers.equalTo;
 
 public class TestAuthorsAPI {
     //    Set the base URI before each test is run
@@ -30,7 +22,8 @@ public class TestAuthorsAPI {
      */
     @Test
     public void testAuthorsPostSuccess() {
-        String payload = "{\n" +
+        String payload =
+            "{\n" +
             "  \"ID\": 987,\n" +
             "  \"IDBook\": 789,\n" +
             "  \"FirstName\": \"Jas\",\n" +
@@ -40,12 +33,10 @@ public class TestAuthorsAPI {
         given().
             contentType(ContentType.JSON).
             body(payload).
-//            log().body().
-    when().
+        when().
             post("/api/Authors").
-            then().
-//            log().body().
-    contentType(ContentType.JSON).
+        then().
+            contentType(ContentType.JSON).
             statusCode(200);
     }
 
@@ -55,14 +46,15 @@ public class TestAuthorsAPI {
      */
     @Test
     public void testAuthorsGetBody() {
-//        Integer id = 1;
+        Integer ID = 1;
         given().
-            pathParam("ID", 1).
+            pathParam("ID", ID).
         when().
             get("/api/Authors/{ID}").
         then().
             body(
-                "ID", equalTo(1),
+                "ID", equalTo(ID),
+                // Assuming the IDBook here is always 1 appears safe for the first author, but would not always be true for every author
                 "IDBook", equalTo(1),
                 "FirstName", equalTo("First Name 1"),
                 "LastName", equalTo("Last Name 1"));
@@ -83,7 +75,6 @@ public class TestAuthorsAPI {
                 get("/authors/books/{IDBook}").
             then().
                 contentType(ContentType.JSON).
-                log().body().
                 extract().response();
         // Put all bookIDs into a list
         List<Integer> bookIDs = response.path("IDBook");
